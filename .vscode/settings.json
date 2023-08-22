@@ -1,0 +1,34 @@
+{
+    "explorer.sortOrder": "type",
+    "files.exclude": {
+        "**/.portal": true,
+        "**/.lsp": true,
+        "**/.cpcache": true,
+        "**/.calva": true,
+        "*/**/.clj-kondo": true,
+    },
+    "calva.replConnectSequences": [
+        {
+            "name": "watch-generic",
+            "projectType": "generic",
+            "autoSelectForConnect": true,
+            "nReplPortFile": [
+                ".nrepl-port"
+            ]
+        },
+        {
+            "name": "jack-in",
+            "projectRootPath": [
+                "."
+            ],
+            "projectType": "deps.edn",
+            "autoSelectForJackIn": true,
+            "menuSelections": {
+                "cljAliases": [
+                    "nrepl"
+                ]
+            },
+            "afterCLJReplJackInCode": "(do (require 'main) (in-ns 'main))"
+        }
+    ]
+}
